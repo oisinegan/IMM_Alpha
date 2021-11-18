@@ -20,9 +20,10 @@ public class CameraRotation : MonoBehaviour
         //get input for horizontal and vertical movement
         verticalInput = verticalInput + xCameraRotationSpeed * Input.GetAxis("Mouse Y");
         horizontalInput = horizontalInput - yCameraRotationSpeed * Input.GetAxis("Mouse X");
-        float yLimits = Mathf.Clamp(verticalInput,-90f,90);
+        float yLimits = Mathf.Clamp(verticalInput,-80f,80);
 
         transform.eulerAngles = new Vector3(yLimits, horizontalInput, 0.0f);
+      
 
     }
 }
