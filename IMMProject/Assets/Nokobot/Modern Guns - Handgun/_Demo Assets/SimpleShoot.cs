@@ -19,6 +19,7 @@ public class SimpleShoot : MonoBehaviour
     [Tooltip("Specify time to destory the casing object")] [SerializeField] private float destroyTimer = 2f;
     [Tooltip("Bullet Speed")] [SerializeField] private float shotPower = 500f;
     [Tooltip("Casing Ejection Speed")] [SerializeField] private float ejectPower = 150f;
+    private float destroyBulletTimer = 7f;
 
 
     void Start()
@@ -37,7 +38,9 @@ public class SimpleShoot : MonoBehaviour
         {
             //Calls animation on the gun that has the relevant animation events that will fire
             gunAnimator.SetTrigger("Fire");
+
         }
+    
     }
 
 
@@ -49,9 +52,8 @@ public class SimpleShoot : MonoBehaviour
             //Create the muzzle flash
             GameObject tempFlash;
             tempFlash = Instantiate(muzzleFlashPrefab, barrelLocation.position, barrelLocation.rotation);
-
-            //Destroy the muzzle flash effect
             Destroy(tempFlash, destroyTimer);
+           
         }
 
         //cancels if there's no bullet prefeb
@@ -59,8 +61,10 @@ public class SimpleShoot : MonoBehaviour
         { return; }
 
         // Create a bullet and add force on it in direction of the barrel
-        Instantiate(bulletPrefab, barrelLocation.position, barrelLocation.rotation).GetComponent<Rigidbody>().AddForce(barrelLocation.forward * shotPower);
-
+       // Instantiate(bulletPrefab, barrelLocation.position, barrelLocation.rotation).GetComponent<Rigidbody>().AddForce(barrelLocation.forward * shotPower);
+        GameObject bullet = Instantiate(bulletPrefab, barrelLocation.position, barrelLocation.rotation);
+        bullet.GetComponent<Rigidbody>().AddForce(barrelLocation.forward * shotPower);
+        Destroy(bullet, destroyBulletTimer);
     }
 
     //This function creates a casing at the ejection slot
