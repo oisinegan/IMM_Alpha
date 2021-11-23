@@ -8,6 +8,7 @@ public class CameraRotation : MonoBehaviour
     public float yCameraRotationSpeed = 3f;
     float verticalInput = 0.0f;
     float horizontalInput = 0.0f;
+    public GameManager gameManager;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,12 +18,15 @@ public class CameraRotation : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //get input for horizontal and vertical movement
-        verticalInput = verticalInput - yCameraRotationSpeed * Input.GetAxis("Mouse Y");
-        horizontalInput = horizontalInput +  xCameraRotationSpeed * Input.GetAxis("Mouse X");
-        float yLimits = Mathf.Clamp(verticalInput,-80f,80);
+        
+        
+            //get input for horizontal and vertical movement
+            verticalInput = verticalInput - yCameraRotationSpeed * Input.GetAxis("Mouse Y");
+            horizontalInput = horizontalInput + xCameraRotationSpeed * Input.GetAxis("Mouse X");
+            float yLimits = Mathf.Clamp(verticalInput, -80f, 80);
 
-        transform.eulerAngles = new Vector3(yLimits, horizontalInput, 0.0f);
+            transform.eulerAngles = new Vector3(yLimits, horizontalInput, 0.0f);
+        
       
 
     }

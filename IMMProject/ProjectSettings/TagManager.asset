@@ -6,6 +6,8 @@ TagManager:
   tags:
   - bullet
   - health
+  - Speed
+  - Enemy
   layers:
   - Default
   - TransparentFX

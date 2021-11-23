@@ -9,13 +9,13 @@ public class PlayerPowerUps: MonoBehaviour
     private GameObject speedPowerUp;
     private PlayerMovement tempSpeed;
     private bool hasSpeedPowerup = false;
-    private bool hasHealthPowerup = false;
+
 
     // Start is called before the first frame update
     void Start()
     {
         healthPowerUp = GameObject.Find("PowerUpContainerWhite"); //Find health power up object
-        speedPowerUp = GameObject.Find("PowerUpContainerElectricSpark"); // FInd speed power up
+       speedPowerUp = GameObject.Find("PowerUpContainerElectricSpark"); // FInd speed power up
         tempSpeed  = GetComponent<PlayerMovement>();
     }
 
@@ -36,15 +36,15 @@ public class PlayerPowerUps: MonoBehaviour
         if (other.gameObject.tag == "health")
         {  
             //If player collides with health power -> Delelte power up and boost player health
-            health += 100;
-            Debug.Log(health);
-            Destroy(healthPowerUp);
+       //     health += 100;
+       //     Debug.Log(health);
+        //    Destroy(healthPowerUp);
         }
         else if(other.gameObject.tag == "Speed")
         {
-            hasSpeedPowerup = true;
-            Destroy(speedPowerUp);
-            StartCoroutine(SpeedPowerupCountdown());
+          //  hasSpeedPowerup = true;
+          //  Destroy(speedPowerUp);
+          //  StartCoroutine(SpeedPowerupCountdown());
         } 
            
     }

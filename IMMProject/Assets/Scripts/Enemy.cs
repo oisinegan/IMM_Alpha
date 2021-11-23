@@ -7,7 +7,9 @@ public class Enemy : MonoBehaviour
     public float speed;
     private Rigidbody enemyRb;
     private GameObject player;
-    private float enemyHealth = 100f;
+    private float enemyHealth = 25f;
+
+   
 
     // Start is called before the first frame update
     void Start()
@@ -20,6 +22,7 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
         Vector3 lookDirection = (player.transform.position - transform.position).normalized;
         enemyRb.AddForce(lookDirection * speed,ForceMode.Acceleration);
     }
