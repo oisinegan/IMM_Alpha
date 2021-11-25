@@ -31,18 +31,18 @@ public class GameManager : MonoBehaviour
             //Fixed bug of when game ended label didn't update to zero quick enough
             if(script.health/2 < 13)
             {
-                healthLabel.text = "Health : 0";
+                healthLabel.text = "Health: 0";
             }
         }
         else
         {
             Cursor.lockState = CursorLockMode.Locked;
-            pointsLabel.text = "Points : " + points;
-            healthLabel.text = "Health : " + script.health / 2;
+            pointsLabel.text = "Points: " + points;
+            healthLabel.text = "Health: " + script.health / 2;
 
             if (script.hasHealthPowerup)
             {
-                healthLabel.text = "Health : Immortal";
+                healthLabel.text = "Health: Immortal";
             }
         }
     }

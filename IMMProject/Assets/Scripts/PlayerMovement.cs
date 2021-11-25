@@ -29,11 +29,11 @@ public class PlayerMovement : MonoBehaviour
         //If speed power up has been enabled increase speed
         if (hasSpeedPowerup)
         {
-            playerSpeed = 100f;
+            playerSpeed = 30f;
         }
         else
         {
-            playerSpeed = 10f;
+            playerSpeed = 15f;
         }
         //If health power up = active player -> immortal for 30 seconds
         if (hasHealthPowerup)
