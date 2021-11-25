@@ -5,7 +5,7 @@ Basic movement and camera rotation according to mouse
 Added Gun assest and got it working
 Added power up assest
 Created random enemy spawn positions
-Added points
+Added points,
 Start game User interface
 
 Adam
