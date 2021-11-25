@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class CameraRotation : MonoBehaviour
 {
-    public float xCameraRotationSpeed = 3f;
-    public float yCameraRotationSpeed = 3f;
+    public float xCameraRotationSpeed = 2f;
+    public float yCameraRotationSpeed = 2f;
     float verticalInput = 0.0f;
     float horizontalInput = 0.0f;
    
