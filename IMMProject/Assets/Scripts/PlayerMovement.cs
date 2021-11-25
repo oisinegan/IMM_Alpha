@@ -29,7 +29,7 @@ public class PlayerMovement : MonoBehaviour
         //If speed power up has been enabled increase speed
         if (hasSpeedPowerup)
         {
-            playerSpeed = 30f;
+            playerSpeed = 100f;
         }
         else
         {
